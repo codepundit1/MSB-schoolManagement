@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    
+
 <head>
 	<title>My Awesome Login Page</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -15,7 +15,7 @@
 			padding: 0;
 			height: 100%;
 			background: #92A9BD !important;
-            
+
 		}
 		.user_card {
 			height: 400px;
@@ -95,19 +95,21 @@
 					<form method="POST" action="{{ route('login') }}">
                         @csrf
 
-                        
+
                           @if ($errors->any())
                           <div class="alert alert-warning alert-dismissible fade show" role="alert">
                             {{-- <strong>Failed!</strong> Somethings is wrong! --}}
                             @foreach ($errors->all() as $error)
                                 <strong>{{$error}}</strong> <br>
                             @endforeach
+
+
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
                             </button>
                           </div>
                           @endif
-                       
+
 
 						<div class="input-group mb-3">
 							<div class="input-group-append">
@@ -115,7 +117,7 @@
 							</div>
 							<input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email" autofocus>
 
-                               
+
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
@@ -123,7 +125,7 @@
 							</div>
 							<input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  autocomplete="current-password">
 
-                               
+
 						</div>
 						<div class="form-group">
 							<div class="custom-control custom-checkbox">
@@ -139,7 +141,7 @@
 				   </div>
 					</form>
 				</div>
-		
+
 				{{-- <div class="mt-4">
 					<div class="d-flex justify-content-center links">
 						Don't have an account? <a href="#" class="ml-2">Sign Up</a>
