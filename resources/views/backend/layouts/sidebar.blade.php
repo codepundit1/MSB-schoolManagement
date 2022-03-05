@@ -41,7 +41,7 @@
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-copy"></i>
                   <p>
-                    Layout Options
+                    Manage Users
                     <i class="fas fa-angle-left right"></i>
 
                   </p>
@@ -50,7 +50,7 @@
                   <li class="nav-item">
                     <a href="pages/layout/top-nav.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>Top Navigation</p>
+                      <p>View Users</p>
                     </a>
                   </li>
 
