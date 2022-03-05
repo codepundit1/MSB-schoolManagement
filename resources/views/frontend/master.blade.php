@@ -17,6 +17,10 @@
     <!-- Style -->
     <link rel="stylesheet" href=" {{asset('frontend')}}/css/style.css">
 
+    {{-- footer style --}}
+    <link rel="stylesheet" href=" {{asset('frontend/footer')}}/css/ionicons.min.css">
+		<link rel="stylesheet" href=" {{asset('frontend/footer')}}/css/style.css">
+    
     <title>MSB | Home</title>
   </head>
   <body>

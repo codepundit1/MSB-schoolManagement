@@ -1,16 +1,4 @@
-<!doctype html>
-<html lang="en">
-  <head>
-  	<title>Footer 01</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-
-		<link rel="stylesheet" href=" {{asset('frontend/footer')}}/css/ionicons.min.css">
-		<link rel="stylesheet" href=" {{asset('frontend/footer')}}/css/style.css">
-  </head>
-  <body>
 		<section class="ftco-section">
 			<div class="container">
 				<div class="row justify-content-center">
@@ -24,8 +12,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-lg-3 mb-4 mb-md-0">
-						<h2 class="footer-heading">Colorlib</h2>
-						<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+						<h2 class="footer-heading">MSB</h2>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat repudiandae nostrum accusamus fuga, in nisi dolorem autem sapiente rem. Quo amet asperiores velit expedita sit.</p>
 						<ul class="ftco-footer-social p-0">
               <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="ion-logo-twitter"></span></a></li>
               <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="ion-logo-facebook"></span></a></li>
@@ -34,28 +22,7 @@
 					</div>
 					<div class="col-md-6 col-lg-3 mb-4 mb-md-0">
 						<h2 class="footer-heading">Latest News</h2>
-						<div class="block-21 mb-4 d-flex">
-              <a class="img mr-4 rounded" style="background-image: url(images/image_1.jpg);"></a>
-              <div class="text">
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
-                <div class="meta">
-                  <div><a href="#"><span class="icon-calendar"></span> Oct. 16, 2019</a></div>
-                  <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                  <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                </div>
-              </div>
-            </div>
-            <div class="block-21 mb-4 d-flex">
-              <a class="img mr-4 rounded" style="background-image: url(images/image_2.jpg);"></a>
-              <div class="text">
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
-                <div class="meta">
-                  <div><a href="#"><span class="icon-calendar"></span> Oct. 16, 2019</a></div>
-                  <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                  <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                </div>
-              </div>
-            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat repudiandae nostrum accusamus fuga, in nisi dolorem autem sapiente rem. Quo amet asperiores velit expedita sit.</p>
 					</div>
 					<div class="col-md-6 col-lg-3 pl-lg-5 mb-4 mb-md-0">
 						<h2 class="footer-heading">Quick Links</h2>
@@ -72,8 +39,8 @@
 						<h2 class="footer-heading">Have a Questions?</h2>
 						<div class="block-23 mb-3">
               <ul>
-                <li><span class="icon ion-ios-pin"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-                <li><a href="#"><span class="icon ion-ios-call"></span><span class="text">+2 392 3929 210</span></a></li>
+                <li><span class="icon ion-ios-pin"></span><span class="text">Bhawal Mirzapur, Gazipur</span></li>
+                <li><a href="#"><span class="icon ion-ios-call"></span><span class="text">+8801639286311</span></a></li>
                 <li><a href="#"><span class="icon ion-ios-send"></span><span class="text">info@yourdomain.com</span></a></li>
               </ul>
             </div>
@@ -82,18 +49,12 @@
 				<div class="row mt-5">
           <div class="col-md-12 text-center">
 
-            <p class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ion-ios-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            <p class="copyright">
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made By <i class="ion-ios-heart" aria-hidden="true"></i> by <a href="#" target="_blank">Md. Jahid Hasan</a>
+</p>
           </div>
         </div>
 			</div>
 		</footer>
 
 
-    <script src="{{asset('frontend/footer')}}/js/jquery.min.js"></script>
-    <script src="{{asset('frontend/footer')}}/js/popper.js"></script>
-    <script src="{{asset('frontend/footer')}}/js/bootstrap.min.js"></script>
-    <script src="{{asset('frontend/footer')}}/js/main.js"></script>
-  </body>
-</html>
