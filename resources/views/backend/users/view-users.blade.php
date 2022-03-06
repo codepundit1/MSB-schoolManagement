@@ -38,7 +38,7 @@
                 <div class="card">
                   <div class="card-header">
                     <h3>
-                      <i class="fas fa-user mr-2"></i>
+                      
                       User List
                       <a href="#" class="btn btn-sm float-right btn-success"><span class="mr-1">Add</span><i class="fa fa-plus-circle"></i></a>
                     </h3>
@@ -64,22 +64,18 @@
                               <td>{{$key+1}}</td>
                               <td>{{$user->name}}</td>
                               <td>{{$user->email}}</td>
-                              <td></td>
-                              <td>btn</td>
+                              <td>{{$user->userType}}</td>
+                            
+                              <td>
+                                  <a title="edit" class="mr-1" href=""><i class="fa fa-edit "></i></a>
+                                  <a title="delete" href=""><i class="fa fa-trash "></i></a>
+                              </td>
                               
                           </tr>
                             @endforeach
                         </tbody>
                     </table>
-                    <div class="tab-content p-0">
-                      <!-- Morris chart - Sales -->
-                      <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px">
-                        <canvas id="revenue-chart-canvas" height="300" style="height: 300px"></canvas>
-                      </div>
-                      <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px">
-                        <canvas id="sales-chart-canvas" height="300" style="height: 300px"></canvas>
-                      </div>
-                    </div>
+                    
                   </div>
                   <!-- /.card-body -->
                 </div>
