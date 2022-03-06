@@ -38,11 +38,11 @@
                 <div class="card">
                   <div class="card-header">
                     <h3>
-                      
+
                       User List
-                      <a href="#" class="btn btn-sm float-right btn-success"><span class="mr-1">Add</span><i class="fa fa-plus-circle"></i></a>
+                      <a href="{{route('users.add')}}" class="btn btn-sm float-right btn-success"><span class="mr-1">Add</span><i class="fa fa-plus-circle"></i></a>
                     </h3>
-                   
+
                   </div>
                   <!-- /.card-header -->
                   <div class="card-body">
@@ -54,7 +54,7 @@
                               <th>Email</th>
                               <th>Role</th>
                               <th>Action</th>
-                              
+
                             </tr>
                         </thead>
 
@@ -65,17 +65,17 @@
                               <td>{{$user->name}}</td>
                               <td>{{$user->email}}</td>
                               <td>{{$user->userType}}</td>
-                            
+
                               <td>
                                   <a title="edit" class="mr-1" href=""><i class="fa fa-edit "></i></a>
                                   <a title="delete" href=""><i class="fa fa-trash "></i></a>
                               </td>
-                              
+
                           </tr>
                             @endforeach
                         </tbody>
                     </table>
-                    
+
                   </div>
                   <!-- /.card-body -->
                 </div>
