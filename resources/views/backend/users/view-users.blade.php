@@ -67,7 +67,7 @@
                               <td>{{$user->userType}}</td>
 
                               <td>
-                                  <a title="edit" class="mr-1" href=""><i class="fa fa-edit "></i></a>
+                                  <a title="edit" class="mr-1" href="{{route('users.edit', $user->id)}}"><i class="fa fa-edit "></i></a>
                                   <a title="delete" href=""><i class="fa fa-trash "></i></a>
                               </td>
 

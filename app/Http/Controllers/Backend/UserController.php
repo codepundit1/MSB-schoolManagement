@@ -32,7 +32,7 @@ class UserController extends Controller
             'email' => 'required|email|unique:users,email,',
             'password' => "required|min:6|same:confirm_password",
             'confirm_password' => "required:min:6|same:password",
-            'password_current' => "required:min:6"
+            // 'password_current' => "required:min:6"
         ]);
         $data = new User();
         $data->userType = $request->userType;
@@ -42,6 +42,20 @@ class UserController extends Controller
         $data->save();
 
         return redirect()->route('users.view');
+
+    }
+
+
+    //Edit User
+    public function edit($id)
+    {
+        $data = User::find($id);
+        return view('backend.users.edit-users', compact('data'));
+    }
+
+    //Update User
+    public function update(Request $request)
+    {
 
     }
 }

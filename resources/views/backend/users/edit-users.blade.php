@@ -60,30 +60,18 @@
 
                                 <div class="form-group col-md-4">
                                     <label for="name">Name</label>
-                                    <input type="text" class="form-control" name="name">
+                                    <input type="text" class="form-control" name="name" value="{{$data->name}}">
                                     <font class="text-danger">{{($errors->has('name'))?($errors->first('name')):''}}</font>
                                 </div>
 
                                 <div class="form-group col-md-4">
                                     <label for="email">Email</label>
-                                    <input type="email" class="form-control" name="email">
+                                    <input type="email" class="form-control" name="email" value="{{$data->email}}">
                                     <font class="text-danger">{{($errors->has('email'))?($errors->first('email')):''}}</font>
 
 
                                 </div>
 
-                                <div class="form-group col-md-4">
-                                    <label for="password">Password</label>
-                                    <input type="password" class="form-control" name="password" id="password">
-                                    <font class="text-danger">{{($errors->has('password'))?($errors->first('password')):''}}</font>
-
-                                </div>
-
-                                <div class="form-group col-md-4">
-                                    <label for="confirm_password">Confirm Password</label>
-                                    <input type="password" class="form-control" name="confirm_password">
-                                    <font class="text-danger">{{($errors->has('confirm_password'))?($errors->first('confirm_password')):''}}</font>
-                                </div>
 
                                 <div class="form-group col-md-6">
 

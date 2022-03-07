@@ -32,6 +32,9 @@
     <link rel="stylesheet" href="{{asset('backend')}}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="{{asset('backend')}}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="{{asset('backend')}}/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
+      <!-- jQuery -->
+    <script src=" {{asset('backend')}}/plugins/jquery/jquery.min.js"></script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -64,8 +67,7 @@
   <script>
     $.widget.bridge("uibutton", $.ui.button);
   </script>
-  <!-- jQuery -->
-  <script src=" {{asset('backend')}}/plugins/jquery/jquery.min.js"></script>
+
   <!-- jQuery UI 1.11.4 -->
   <script src=" {{asset('backend')}}/plugins/jquery-ui/jquery-ui.min.js"></script>
   <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -96,6 +98,10 @@
   <script src=" {{asset('backend')}}/dist/js/demo.js"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src=" {{asset('backend')}}/dist/js/pages/dashboard.js"></script>
+
+  <!-- jquery-validation -->
+    <script src=" {{asset('backend')}}/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script src=" {{asset('backend')}}/plugins/jquery-validation/additional-methods.min.js"></script>
 
   <!-- DataTables  & Plugins -->
   <script src="{{asset('backend')}}/plugins/datatables/jquery.dataTables.min.js"></script>
