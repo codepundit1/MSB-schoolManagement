@@ -41,7 +41,7 @@ class UserController extends Controller
         $data->password = bcrypt($request->password);
         $data->save();
 
-        return redirect()->route('users.view');
+        return redirect()->route('users.view')->with('success', 'Data added successfully');
 
     }
 
@@ -70,6 +70,6 @@ class UserController extends Controller
     {
         $deleteData = User::find($id);
         $deleteData->delete();
-        return redirect()->route('users.view');
+        return redirect()->route('users.view')->with('success', 'Successfully Deleted');
     }
 }
