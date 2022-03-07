@@ -62,7 +62,7 @@ class UserController extends Controller
         $dataUpdate->email = $request->email;
         $dataUpdate->save();
 
-        return redirect()->route('users.view');
+        return redirect()->route('users.view')->with('success', 'Data updated successfully');
     }
 
     //Delete User

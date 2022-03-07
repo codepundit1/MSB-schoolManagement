@@ -35,6 +35,14 @@
 
       <!-- jQuery -->
     <script src=" {{asset('backend')}}/plugins/jquery/jquery.min.js"></script>
+
+    <style type="text/css">
+        .notifyjs-corner{
+            z-index: 10000 !important;
+        }
+    </style>
+    {{-- Notify --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js" integrity="sha512-efUTj3HdSPwWJ9gjfGR71X9cvsrthIA78/Fvd/IN+fttQVy7XWkOAXb295j8B3cmm/kFKVxjiNYzKw9IQJHIuQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -55,6 +63,13 @@
     @include('backend.layouts.footer')
 
 
+    @if (session()->has('success'))
+        <script>
+            $(function(){
+                $.notify("{{session()->get('success')}}", {globalPosition: 'top right', className:'success'});
+            })
+        </script>
+    @endif
 
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
