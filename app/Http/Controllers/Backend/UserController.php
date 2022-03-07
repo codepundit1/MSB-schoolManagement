@@ -49,13 +49,27 @@ class UserController extends Controller
     //Edit User
     public function edit($id)
     {
-        $data = User::find($id);
-        return view('backend.users.edit-users', compact('data'));
+        $editData = User::find($id);
+        return view('backend.users.edit-users', compact('editData'));
     }
 
     //Update User
     public function update(Request $request)
     {
+        $dataUpdate = User::find($request->id);
+        $dataUpdate->userType = $request->userType;
+        $dataUpdate->name = $request->name;
+        $dataUpdate->email = $request->email;
+        $dataUpdate->save();
 
+        return redirect()->route('users.view');
+    }
+
+    //Delete User
+    public function delete($id)
+    {
+        $deleteData = User::find($id);
+        $deleteData->delete();
+        return redirect()->route('users.view');
     }
 }

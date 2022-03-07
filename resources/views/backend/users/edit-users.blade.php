@@ -15,7 +15,7 @@
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li class="breadcrumb-item active">Add User</li>
+                  <li class="breadcrumb-item active">Edit User</li>
                 </ol>
               </div>
               <!-- /.col -->
@@ -39,43 +39,44 @@
                   <div class="card-header">
                     <h3>
 
-                      User List
+                      Edit User
                       <a href="{{route('users.view')}}" class="btn btn-sm float-right btn-success"><i class="fa fa-arrow-left"></i><span class="ml-1">Back</span></a>
                     </h3>
 
                   </div>
                   <!-- /.card-header -->
                   <div class="card-body">
-                        <form action="{{route('users.store')}}" method="post" id="myForm">
+                        <form action="{{route('users.update', $editData->id)}}" method="post" id="myForm">
                             @csrf
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                     <label for="userType">User Role</label>
                                     <select name="userType" id="userType" class="form-control">
                                         <option value="">Select Role</option>
-                                        <option value="Admin">Admin</option>
-                                        <option value="User">User</option>
+                                        <option value="Admin" {{($editData->userType == "Admin")?"selected":""}}>Admin</option>
+                                        <option value="User" {{($editData->userType == "User")?"selected":""}}>User</option>
                                     </select>
                                 </div>
 
                                 <div class="form-group col-md-4">
                                     <label for="name">Name</label>
-                                    <input type="text" class="form-control" name="name" value="{{$data->name}}">
+                                    <input type="text" class="form-control" value="{{$editData->name}}" name="name">
                                     <font class="text-danger">{{($errors->has('name'))?($errors->first('name')):''}}</font>
                                 </div>
 
                                 <div class="form-group col-md-4">
                                     <label for="email">Email</label>
-                                    <input type="email" class="form-control" name="email" value="{{$data->email}}">
+                                    <input type="email" class="form-control" value="{{$editData->email}}" name="email">
                                     <font class="text-danger">{{($errors->has('email'))?($errors->first('email')):''}}</font>
 
 
                                 </div>
 
 
+
                                 <div class="form-group col-md-6">
 
-                                    <input type="submit" value="submit" class="btn btn-primary ">
+                                    <input type="submit" value="update" class="btn btn-primary ">
                                 </div>
 
 
