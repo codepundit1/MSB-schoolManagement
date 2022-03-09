@@ -38,7 +38,7 @@
 
     <style type="text/css">
         .notifyjs-corner{
-            z-index: 10000 !important;
+            z-index: 99999 !important;
         }
     </style>
     {{-- Notify --}}
@@ -72,6 +72,14 @@
             })
         </script>
     @endif
+
+    @if (session()->has('error'))
+    <script>
+        $(function(){
+            $.notify("{{session()->get('error')}}", {globalPosition: 'top right', className:'error'});
+        })
+    </script>
+@endif
 
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
@@ -178,6 +186,20 @@
           })
       })
   </script>
+
+
+    {{-- image upload and show it  --}}
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#image').change(function(e){
+          var reader = new FileReader();
+          reader.onload = function(e){
+            $('#showImage').attr('src',e.target.result);
+          }
+          reader.readAsDataURL(e.target.files['0']);
+        });
+      });
+    </script>
 </body>
 
 </html>

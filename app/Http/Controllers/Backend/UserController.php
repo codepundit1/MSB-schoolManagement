@@ -69,6 +69,10 @@ class UserController extends Controller
     public function delete($id)
     {
         $deleteData = User::find($id);
+
+        if (file_exists('upload/user_images/' . $deleteData->image) AND !empty($deleteData->image)){
+            unlink('upload/user_images/' . $deleteData->image);
+        }
         $deleteData->delete();
         return redirect()->route('users.view')->with('success', 'Successfully Deleted');
     }

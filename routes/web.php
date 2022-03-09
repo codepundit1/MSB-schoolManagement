@@ -31,3 +31,14 @@ Route::prefix('users')->group(function(){
     Route::post('/update/{id}', 'Backend\UserController@update')->name('users.update');
     Route::get('/delete/{id}', 'Backend\UserController@delete')->name('users.delete');
 });
+
+
+// Profile manage
+
+Route::prefix('profiles')->group(function(){
+    Route::get('/view', 'Backend\ProfileController@view')->name('profiles.view');
+    Route::get('/edit', 'Backend\ProfileController@edit')->name('profiles.edit');
+    Route::post('/update', 'Backend\ProfileController@update')->name('profiles.update');
+    Route::get('/password/view', 'Backend\ProfileController@passwordView')->name('profiles.password.view');
+    Route::post('/password/update', 'Backend\ProfileController@passwordUpdate')->name('profiles.password.update');
+});
