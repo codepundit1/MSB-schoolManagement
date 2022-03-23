@@ -35,7 +35,7 @@
                     <i class="fa fa-user fa-fw mr-1"></i>
                   <p>
 
-                    Manage Users
+                    Users Management
                     <i class="fas fa-angle-left right"></i>
 
                   </p>
@@ -61,7 +61,7 @@
                     <i class="fa fa-user fa-fw mr-1"></i>
                   <p>
 
-                    Manage Profile
+                    Profile Management
                     <i class="fas fa-angle-left right"></i>
 
                   </p>
@@ -86,6 +86,26 @@
               </li>
 
 
+              <li class="nav-item has-treeview {{ ($prefix=='/setups')?'menu-open':'' }}">
+                <a href="#" class="nav-link ">
+                    <i class="fa fa-user fa-fw mr-1"></i>
+                  <p>
+
+                    Setup Management
+                    <i class="fas fa-angle-left right"></i>
+
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{route('setups.student.class.view')}}" class="nav-link {{ ($route == 'setups.student.class.view')?'active':'' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Student Class</p>
+                    </a>
+                  </li>
+                </ul>
+
+              </li>
 
             </ul>
           </nav>

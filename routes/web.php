@@ -23,6 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
+// User manage
 Route::prefix('users')->group(function(){
     Route::get('/view', 'Backend\UserController@view')->name('users.view');
     Route::get('/add', 'Backend\UserController@add')->name('users.add');
@@ -41,4 +42,15 @@ Route::prefix('profiles')->group(function(){
     Route::post('/update', 'Backend\ProfileController@update')->name('profiles.update');
     Route::get('/password/view', 'Backend\ProfileController@passwordView')->name('profiles.password.view');
     Route::post('/password/update', 'Backend\ProfileController@passwordUpdate')->name('profiles.password.update');
+});
+
+
+// Class manage
+Route::prefix('setups')->group(function(){
+    Route::get('/student/class/view', 'Backend\Setup\StudentClassController@view')->name('setups.student.class.view');
+    Route::get('/student/class/add', 'Backend\Setup\StudentClassController@add')->name('setups.student.class.add');
+    Route::post('/student/class/store', 'Backend\Setup\StudentClassController@store')->name('setups.student.class.store');
+    Route::get('/student/class/edit/{id}', 'Backend\Setup\StudentClassController@edit')->name('setups.student.class.edit');
+    Route::post('/student/class/update/{id}', 'Backend\Setup\StudentClassController@update')->name('setups.student.class.update');
+    Route::get('/student/class/delete/{id}', 'Backend\Setup\StudentClassController@delete')->name('setups.student.class.delete');
 });
