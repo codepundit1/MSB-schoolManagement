@@ -7,7 +7,7 @@
       </li>
 
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Visit Website</a>
+        <a href="{{ url('/') }}" class="nav-link">Visit Website</a>
       </li>
     </ul>
 
