@@ -57,7 +57,10 @@ class StudentClassController extends Controller
         //Update Class
     public function update(Request $request)
     {
+        $this->validate($request,[
+            'name' => 'required|unique:student_classes,name',
 
+        ]);
         $dataUpdate = StudentClass::find($request->id);
         $dataUpdate->name = $request->name;
         $dataUpdate->save();
