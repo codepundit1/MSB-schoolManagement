@@ -15,7 +15,11 @@
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  @if (isset($editData))
+                  <li class="breadcrumb-item active">Edit Class</li>
+                  @else
                   <li class="breadcrumb-item active">Add Class</li>
+                  @endif
                 </ol>
               </div>
               <!-- /.col -->
@@ -38,33 +42,35 @@
                 <div class="card">
                   <div class="card-header">
                     <h3>
-
+                      @if (isset($editData))
+                      Edit Class
+                      @else
                       Add a new Class
+                      @endif
+
                       <a href="{{route('setups.student.class.view')}}" class="btn btn-sm float-right btn-success"><i class="fa fa-arrow-left"></i><span class="ml-1">Back</span></a>
                     </h3>
 
                   </div>
                   <!-- /.card-header -->
                   <div class="card-body">
-                        <form action="{{route('setups.student.class.store')}}" method="post" id="myForm">
+                        <form action="{{(isset($editData))?route('setups.student.class.update', $editData->id):route('setups.student.class.store')}}" method="post" id="myForm">
                             @csrf
                             <div class="form-row">
 
 
                                 <div class="form-group col-md-6">
-                                    <label for="name">Name</label>
+                                    <label>Class Name</label>
+                                    @if (isset($editData))
+                                    <input type="text" class="form-control" value="{{$editData->name}}" name="name">
+                                    @else
                                     <input type="text" class="form-control" name="name">
+                                    @endif
                                     <font class="text-danger">{{($errors->has('name'))?($errors->first('name')):''}}</font>
                                 </div>
-
-
-
-                                <div class="form-group col-md-7">
-
-                                    <input type="submit" value="Submit" class="btn btn-primary ">
+                                <div class="form-group col-md-4 ml-2" style="padding-top: 32px">
+                                    <button type="submit" class="btn btn-primary">{{ (isset($editData))?'Update':'Submit' }}</button>
                                 </div>
-
-
                             </div>
                         </form>
 

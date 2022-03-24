@@ -50,13 +50,14 @@ class StudentClassController extends Controller
      {
 
          $editData = StudentClass::find($id);
-         return view('backend.setups.student_class.edit-class', compact('editData'));
+         return view('backend.setups.student_class.add-class', compact('editData'));
      }
 
 
         //Update Class
     public function update(Request $request)
     {
+
         $dataUpdate = StudentClass::find($request->id);
         $dataUpdate->name = $request->name;
         $dataUpdate->save();
