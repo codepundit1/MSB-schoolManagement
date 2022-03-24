@@ -123,6 +123,15 @@
                     </li>
                   </ul>
 
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="{{route('setups.student.shift.view')}}" class="nav-link {{ ($route == 'setups.student.shift.view')?'active':'' }}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Shift</p>
+                      </a>
+                    </li>
+                  </ul>
+
               </li>
 
             </ul>
