@@ -60,10 +60,10 @@
                             @foreach ($allData as $key=> $data )
                             <tr>
                               <td>{{$key+1}}</td>
-                              <td>{{$data->name}}</td>
+                              <td>{{$data['fee_category'] ['name']}}</td>
                               <td>
-                                  <a title="edit" class="mr-1" href="{{route('setups.fee.amount.edit', $data->id)}}"><i class="fa fa-edit "></i></a>
-                                  <a title="delete" id="delete" href="{{route('setups.fee.amount.edit', $data->id)}}"><i class="fa fa-trash "></i></a>
+                                  <a title="edit" class="mr-1" href="{{route('setups.fee.amount.edit', $data->fee_category_id)}}"><i class="fa fa-edit "></i></a>
+                                  {{-- <a title="delete" id="delete" href="{{route('setups.fee.amount.delete', $data->id)}}"><i class="fa fa-trash "></i></a> --}}
                               </td>
 
                           </tr>

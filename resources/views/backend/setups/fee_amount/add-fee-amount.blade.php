@@ -54,35 +54,52 @@
                   </div>
                   <!-- /.card-header -->
                   <div class="card-body">
-                        <form action="{{(isset($editData))?route('setups.fee.amount.update', $editData->id):route('setups.fee.amount.store')}}" method="post" id="myForm">
-                            @csrf
+                         <form action="{{(isset($editData))?route('setups.fee.amount.update', $editData->id):route('setups.fee.amount.store')}}" method="post" id="myForm">
+                        @csrf
+                        <div class="add_item">
                             <div class="form-row">
-
-
-                                <div class="form-group col-md-6">
-                                    <label>Fee Category Amount</label>
-                                    @if (isset($editData))
-                                    <input type="text" class="form-control" value="{{$editData->name}}" name="name">
-                                    @else
-                                    <input type="text" class="form-control" name="name">
-                                    @endif
-                                    <font class="text-danger">{{($errors->has('name'))?($errors->first('name')):''}}</font>
-                                </div>
-
-
-                                <div class="form-group col-md-4 ml-2" style="padding-top: 32px">
-                                    <button type="submit" class="btn btn-primary">{{ (isset($editData))?'Update':'Submit' }}</button>
+                                <div class="form-group col-md-5">
+                                    <label for="">Fee Category</label>
+                                    <select name="fee_category_id" id="" class="form-control">
+                                        <option value="">Select Fee Category</option>
+                                        @foreach ($fee_categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
-                        </form>
 
+                            <div class="form-row">
+                                <div class="form-group col-md-5">
+                                    <label for="">Student Class</label>
+                                    <select name="class_id[]" id="" class="form-control">
+                                        <option value="">Select Student Class</option>
+                                        @foreach ($student_classes as $class)
+                                         <option value="{{ $class->id }}">{{ $class->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <label for="">Amount</label>
+                                    <input type="text" name="amount[]" id="" class="form-control">
+                                </div>
+
+                                <div class="form-group col-md-1" style="padding-top: 35px;">
+                                  <span class="btn btn-primary btn-sm addeventmore"><i class="fa fa-plus-circle"></i></span>
+                                </div>
+                            </div>
+
+                            <div class="test">
+                              <h3 class="text-center">Need Validation</h3>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4 ">
+                            <button type="submit" class="btn btn-primary">{{ (isset($editData))?'Update':'Submit' }}</button>
+                        </div>
+                    </form>
                   </div>
                   <!-- /.card-body -->
                 </div>
-                <!-- /.card -->
-
-
-
                 <!-- /.card -->
               </section>
               <!-- /.Left col -->
@@ -95,51 +112,54 @@
         <!-- /.content -->
       </div>
       <!-- /.content-wrapper -->
+      <div style="visibility: hidden;">
+        <div class="extra_item_add" id="extra_item_add">
+          <div class="extra_item_delete" id="extra_item_delete">
+            <div class="form-row">
+                <div class="form-group col-md-5">
+                    <label for="">Student Class</label>
+                    <select name="class_id[]" id="" class="form-control">
+                        <option value="">Select Student Class</option>
+                        @foreach ($student_classes as $class)
+                         <option value="{{ $class->id }}">{{ $class->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
 
+                <div class="form-group col-md-5">
+                    <label for="">Amount</label>
+                    <input type="text" name="amount[]" id="" class="form-control">
+                </div>
+
+                <div class="form-group col-md-1" style="padding-top: 35px;">
+                  <div class="form-row">
+                    <span class="btn btn-primary btn-sm addeventmore mr-1"><i class="fa fa-plus-circle"></i></span>
+                    <span class="btn btn-danger btn-sm removeeventmore"><i class="fa fa-minus-circle"></i></span>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 
       <!-- Page specific script -->
-          <script>
-                $(function () {
-                //   $.validator.setDefaults({
-                //     submitHandler: function () {
-                //       alert( "Form successful submitted!" );
-                //     }
-                //   });
-                $('#myForm').validate({
-                    rules: {
+      <script type="text/javascript">
+        $(document).ready(function(){
+            var counter = 0;
+            $(document).on("click", ".addeventmore", function() {
+                var extra_item_add = $("#extra_item_add").html();
+                $(this).closest(".add_item").append(extra_item_add);
+                counter++;
+            });
+
+            $(document).on("click", ".removeeventmore", function(event) {
+                $(this).closest(".extra_item_delete").remove();
+                counter -= 1;
+            });
+        });
+  </script>
 
 
-
-                    name: {
-                        required: true,
-                    },
-
-                    },
-                    messages: {
-
-
-
-                    name: {
-                        required: "Please Enter Username",
-                    },
-
-
-
-                    },
-                    errorElement: 'span',
-                    errorPlacement: function (error, element) {
-                    error.addClass('invalid-feedback');
-                    element.closest('.form-group').append(error);
-                    },
-                    highlight: function (element, errorClass, validClass) {
-                    $(element).addClass('is-invalid');
-                    },
-                    unhighlight: function (element, errorClass, validClass) {
-                    $(element).removeClass('is-invalid');
-                    }
-                });
-             });
-        </script>
 @endsection
